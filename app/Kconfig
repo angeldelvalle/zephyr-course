@@ -33,12 +33,21 @@ menu "LED Subsystem"
             Advanced LED settings
 
     if ADVANCED_LED_SETTINGS
-    config LED_BRIGHTNESS
-        int "Led brightness"
-        default 100
-        range 0 100
-        help
-            Led brightness percentage
+        menu "Advanced LED Settings"
+            config LED_BRIGHTNESS
+                int "Led brightness (%)"
+                default 100
+                range 0 100
+                help
+                    Led brightness percentage
+
+            config LED_FADE_DURATION
+                int "Led fade duration (ms)"
+                default 500
+                range 0 5000
+                help
+                    Led Fade duration ms
+        endmenu
     endif
 endmenu
 
