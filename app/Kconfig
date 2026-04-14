@@ -47,6 +47,13 @@ menu "LED Subsystem"
                 range 0 5000
                 help
                     Led Fade duration ms
+            menu "Expert settings"
+                config ENABLE_LED_DEBUG
+                    bool "Enable LED debugging"
+                
+                config CUSTOM_BLINK_PATTERN
+                    bool "Custom blink pattern"
+            endmenu
         endmenu
     endif
 endmenu
