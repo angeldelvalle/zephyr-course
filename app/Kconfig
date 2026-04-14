@@ -16,6 +16,7 @@ menu "LED Subsystem"
         config BLINK_PERIOD_2S
             bool "2S period"
     endchoice
+
     config LED_BLINKING_PERIOD
     int
     default 100 if BLINK_PERIOD_100S
@@ -25,6 +26,20 @@ menu "LED Subsystem"
     range 100 2000
     help
         Led blinking period
+
+    config ADVANCED_LED_SETTINGS
+        bool "Advanced LED settings"
+        help
+            Advanced LED settings
+
+    if ADVANCED_LED_SETTINGS
+    config LED_BRIGHTNESS
+        int "Led brightness"
+        default 100
+        range 0 100
+        help
+            Led brightness percentage
+    endif
 endmenu
 
 menu "Zephyr's config"
