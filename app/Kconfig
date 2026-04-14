@@ -1,0 +1,32 @@
+menu "LED Subsystem"
+    choice
+        prompt "Blink Sleep TIme"
+        default BLINK_PERIOD_1S
+        optional
+    
+        config BLINK_PERIOD_250MS
+            bool "250MS period"
+    
+        config BLINK_PERIOD_500MS
+            bool "500MS period"
+    
+        config BLINK_PERIOD_1S
+            bool "1S period"
+
+        config BLINK_PERIOD_2S
+            bool "2S period"
+    endchoice
+    config LED_BLINKING_PERIOD
+    int
+    default 100 if BLINK_PERIOD_100S
+    default 500 if BLINK_PERIOD_500MS
+    default 1000 if BLINK_PERIOD_1S
+    default 2000 if BLINK_PERIOD_2S
+    range 100 2000
+    help
+        Led blinking period
+endmenu
+
+menu "Zephyr's config"
+source "Kconfig.zephyr"
+endmenu
