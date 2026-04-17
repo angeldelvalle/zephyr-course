@@ -1,0 +1,12 @@
+/{
+    aliases {
+        app-led = &extLed;
+    };
+
+    ledos: led {
+        compatible = "gpio-leds";
+        extLed:external_led {
+            gpios = <&gpioc 8 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};
