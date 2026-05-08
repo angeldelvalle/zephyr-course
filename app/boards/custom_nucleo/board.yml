@@ -1,0 +1,6 @@
+board:
+  name: custom_nucleo
+  full_name: Custom Nucleo
+  vendor: Adelvalle
+  socs:
+    - name: stm32f767xx
