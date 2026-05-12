@@ -1,0 +1,6 @@
+board:
+  name: my_nucleo
+  full_name: My Nucleo
+  vendor: adelvalle
+  socs:
+    - name: stm32f767xx
